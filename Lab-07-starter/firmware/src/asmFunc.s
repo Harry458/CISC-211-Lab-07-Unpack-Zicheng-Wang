@@ -60,7 +60,17 @@ asmFunc:
     
     /*** STUDENTS: Place your code BELOW this line!!! **************/
 
-    
+
+    LDR r2,=a_value/*Load the address of a_value into r2 (step 6)*/
+    LDR r3,=b_value/*Load the address of b_value into r3 (step 7)*/
+    MOV r4,r0/*Copy the register  in r0 to r4 (step 1)*/
+    MOV r5,r0/*Copy the register  in r0 to r5 (step 1)*/
+    ASR r4, r4, #16/*Arithmetic shift right r4 by 16 bits (step 2)*/
+    LSL r5, r5, #16/*Logical shift left r5 by 16 bits step 2*/
+    ASR r5, r5, #16/*Arithmetic shift right r5 by 16 bits step 2*/
+    STR r4,[r2]/*Store the value in r4 to the address in r2(a_value) (step 6)*/
+    STR r5,[r3]/*Store the value in r5 to the address in r3(b_value) (step 7)*/
+      
     /*** STUDENTS: Place your code ABOVE this line!!! **************/
 
 done:    
